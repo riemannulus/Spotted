@@ -1,12 +1,22 @@
 " Plugins will be downloaded from under list
 call plug#begin('~/.vim/plugged')
 
-" Language
+" Environment
 Plug 'klen/python-mode'
+Plug 'othree/html5.vim'
+Plug 'pangloss/vim-javascript'
+Plug 'tclem/vim-arduino'
+" Environment End
 
 " Accessibility
 " File system explorer
 Plug 'scrooloose/nerdtree'
+
+" HTML5 auto tag
+Plug 'mattn/emmet-vim'
+
+" Syntax highlight
+Plug 'sheerun/vim-polyglot'
 
 " Wrong syntax check
 Plug 'scrooloose/syntastic'
@@ -14,8 +24,14 @@ Plug 'scrooloose/syntastic'
 " More easyer comment
 Plug 'scrooloose/nerdcommenter'
 
-" Autocomplete
-Plug 'valloric/youcompleteme'
+" Snipmate
+Plug 'MarcWeber/vim-addon-mw-utils'
+Plug 'tomtom/tlib_vim'
+Plug 'garbas/vim-snipmate'
+Plug 'honza/vim-snippets'
+Plug 'Shougo/neosnippet'
+Plug 'Shougo/neosnippet-snippets'
+" End snipmate
 
 " Git
 " Git plugin for vim
@@ -23,6 +39,7 @@ Plug 'tpope/vim-fugitive'
 
 " Git plugin for file system
 Plug 'Xuyuanp/nerdtree-git-plugin'
+" End Git
 
 " Interface
 " Show change status before commit
@@ -38,12 +55,18 @@ Plug 'nightsense/stellarized'
 call plug#end()
 
 " Settings for personalized VIM
-
-" Make tab to space 4
-set tabstop=4
+set tabstop=8
 set softtabstop=4
 set shiftwidth=4
 set expandtab
+set showcmd
+set hlsearch
+set autoindent
+set cindent
+set nu " Show list number
+set autoread " Read file when edited file other editer
+set showcmd
+set incsearch
 
 " Syntax highlighting
 if has("syntax")
@@ -51,11 +74,8 @@ if has("syntax")
 endif
 
 " Autoindent
-set autoindent
-set cindent
 
 " Show list number
-set nu
 
 " Show matching bracket
 set showmatch
@@ -102,3 +122,16 @@ hi Normal ctermbg=none
 
 " Change font to powerline in airline
 let g:airline_powerline_fonts = 1
+
+" Filetype indent behavior
+autocmd Filetype html setlocal ts=2 sw=2 sts=2 expandtab
+autocmd Filetype css setlocal ts=2 sw=2 sts=2 expandtab
+" Filetype indent behavior end
+
+" Using custom highlight. downloaded by
+" Arduino: https://www.vim.org/scripts/script.php?script_id=2654
+au BufRead,BufNewFile *.pde set filetype=arduino
+au BufRead,BufNewFile *.ino set filetype=arduino
+" End Using custom highlight
+
+" Show cmd setting
