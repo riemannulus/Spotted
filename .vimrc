@@ -134,4 +134,5 @@ au BufRead,BufNewFile *.pde set filetype=arduino
 au BufRead,BufNewFile *.ino set filetype=arduino
 " End Using custom highlight
 
-" Show cmd setting
+" filesave at root by forced
+cnoremap w!! %!sudo tee > /dev/null %
