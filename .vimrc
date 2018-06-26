@@ -2,7 +2,6 @@
 call plug#begin('~/.vim/plugged')
 
 " Environment
-Plug 'klen/python-mode'
 Plug 'othree/html5.vim'
 Plug 'pangloss/vim-javascript'
 Plug 'tclem/vim-arduino'
