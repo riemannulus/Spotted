@@ -48,7 +48,7 @@ Plug 'airblade/vim-gitgutter'
 Plug 'bling/vim-airline'
 
 " Download colorscheme
-Plug 'nightsense/stellarized'
+Plug 'nightsense/snow'
 
 " Plugins list end
 call plug#end()
@@ -114,7 +114,9 @@ set laststatus=2
 set statusline=\ %<%l:%v\ [%P]%=%a\ %h%m%r\ %F\
 
 " Colorscheme
-colorscheme stellarized_dark
+set background=dark
+colorscheme snow 
+set termguicolors
 
 " Transparency for show background
 hi Normal ctermbg=none

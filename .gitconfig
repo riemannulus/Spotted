@@ -1,0 +1,5 @@
+[core]
+    editor = nvim
+[user]
+    email = riemannulus@hitagi.moe
+    name = riemannulus
