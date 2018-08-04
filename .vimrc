@@ -49,6 +49,10 @@ Plug 'bling/vim-airline'
 
 " Download colorscheme
 Plug 'nightsense/stellarized'
+Plug 'flazz/vim-colorschemes'
+
+" Vimwiki
+Plug 'vimwiki/vimwiki', { 'branch': 'dev' }
 
 " Plugins list end
 call plug#end()
@@ -108,6 +112,29 @@ let g:NERDCommentEmptyLines = 1
 let g:NERDTrimTrailingWhitespace = 1
 " NERD Commentor config end
 
+" Vimwiki Settings
+"
+" Local leader key
+let maplocalleader = "\\"
+
+" Public / Private wiki
+let g:vimwiki_list = [
+    \{
+    \   'path': '~/Repository/riemannulus.github.io/_wiki',
+    \   'ext' : '.md',
+    \   'diary_rel_path': '.',
+    \},
+    \{
+    \   'path': '~/Dropbox/wiki',
+    \   'ext' : '.md',
+    \   'diary_rel_path': '.',
+    \},
+\]
+
+" Disable conceallevel
+let g:vimwiki_conceallevel = 0
+
+" Vimwiki settings end
 
 " Notify cursor position in status line
 set laststatus=2
