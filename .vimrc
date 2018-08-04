@@ -48,8 +48,8 @@ Plug 'airblade/vim-gitgutter'
 Plug 'bling/vim-airline'
 
 " Download colorscheme
-Plug 'nightsense/stellarized'
 Plug 'flazz/vim-colorschemes'
+Plug 'nightsense/snow'
 
 " Vimwiki
 Plug 'vimwiki/vimwiki', { 'branch': 'dev' }
@@ -141,7 +141,9 @@ set laststatus=2
 set statusline=\ %<%l:%v\ [%P]%=%a\ %h%m%r\ %F\
 
 " Colorscheme
-colorscheme stellarized_dark
+set background=dark
+colorscheme snow 
+set termguicolors
 
 " Transparency for show background
 hi Normal ctermbg=none
@@ -162,3 +164,22 @@ au BufRead,BufNewFile *.ino set filetype=arduino
 
 " filesave at root by forced
 cnoremap w!! %!sudo tee > /dev/null %
+
+" for only neovim
+set clipboard+=unnamedplus
+
+" nnormap start
+" tab navigation shortcut
+nnoremap th  :tabfirst<CR>
+nnoremap tk  :tabnext<CR>
+nnoremap tj  :tabprev<CR>
+nnoremap tl  :tablast<CR>
+nnoremap tt  :tabedit<Space>
+nnoremap tn  :tabnext<Space>
+nnoremap tm  :tabm<Space>
+nnoremap td  :tabclose<CR>
+" Alternatively use
+"nnoremap th :tabnext<CR>
+"nnoremap tl :tabprev<CR>
+"nnoremap tn :tabnew<CR>
+
