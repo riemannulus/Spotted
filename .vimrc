@@ -5,6 +5,7 @@ call plug#begin('~/.vim/plugged')
 Plug 'othree/html5.vim'
 Plug 'pangloss/vim-javascript'
 Plug 'tclem/vim-arduino'
+Plug 'vim-scripts/c.vim'
 " Environment End
 
 " Accessibility
@@ -167,6 +168,10 @@ cnoremap w!! %!sudo tee > /dev/null %
 
 " for only neovim
 set clipboard+=unnamedplus
+
+" for c.vim
+let g:C_UseTool_cmake = 'yes'
+let g:C_UseTool_doxygen = 'yes'
 
 " nnormap start
 " tab navigation shortcut
