@@ -6,11 +6,13 @@ Plug 'othree/html5.vim'
 Plug 'pangloss/vim-javascript'
 Plug 'tclem/vim-arduino'
 Plug 'vim-scripts/c.vim'
+Plug 'valloric/youcompleteme'
 " Environment End
 
 " Accessibility
-" File system explorer
-Plug 'scrooloose/nerdtree'
+" for fzf
+" get more informations checkout https://github.com/junegunn/fzf#installation
+Plug '~/.fzf'
 
 " HTML5 auto tag
 Plug 'mattn/emmet-vim'
@@ -164,7 +166,7 @@ au BufRead,BufNewFile *.ino set filetype=arduino
 " End Using custom highlight
 
 " filesave at root by forced
-cnoremap w!! %!sudo tee > /dev/null %
+cnoremap w!! %!sudo -A tee > /dev/null %
 
 " for only neovim
 set clipboard+=unnamedplus
@@ -172,6 +174,12 @@ set clipboard+=unnamedplus
 " for c.vim
 let g:C_UseTool_cmake = 'yes'
 let g:C_UseTool_doxygen = 'yes'
+
+" for youcompleteme
+" get more informations (installtion) checkout https://github.com/Valloric/YouCompleteMe
+let g:ycm_global_ycm_extra_conf = '~/.vim/.ycm_extra_conf.py'
+let g:ycm_confirm_extra_conf = 0
+
 
 " nnormap start
 " tab navigation shortcut

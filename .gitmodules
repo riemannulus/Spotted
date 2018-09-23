@@ -1,0 +1,3 @@
+[submodule "Xresources-themes"]
+	path = Xresources-themes
+	url = git@github.com:logico-dev/Xresources-themes.git
